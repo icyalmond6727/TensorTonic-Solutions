@@ -7,4 +7,3 @@ def sigmoid(x):
     a = np.asarray(x, dtype = float)
     a = 1 / (1 + np.exp(-a))
     return a
-    pass
