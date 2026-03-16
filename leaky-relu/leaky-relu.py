@@ -10,5 +10,5 @@ def leaky_relu(x, alpha=0.01):
     """
     Vectorized Leaky ReLU implementation.
     """
-    a = np.asarray(x, dtype = float)
-    return np.vectorize(calc)(a, alpha)
+    x = np.asarray(x, dtype = float)
+    return np.vectorize(calc)(x, alpha)
