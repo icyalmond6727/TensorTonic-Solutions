@@ -6,6 +6,6 @@ def softmax(x):
     Works for 1D or 2D NumPy arrays.
     For 2D, compute row-wise softmax.
     """
-    a = np.asarray(x)
-    ex = np.exp(a - np.max(a, axis = -1, keepdims = True))
+    x = np.asarray(x, dtype = float)
+    ex = np.exp(x - np.max(x, axis = -1, keepdims = True))
     return ex / np.sum(ex, axis = -1, keepdims = True)
