@@ -4,5 +4,5 @@ def swish(x):
     """
     Implement Swish activation function.
     """
-    x = np.asarray(x)
+    x = np.asarray(x, dtype = float)
     return x / (1 + np.exp(-x))
