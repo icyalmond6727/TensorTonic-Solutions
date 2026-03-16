@@ -7,7 +7,6 @@ def gelu(x):
     x: list or np.ndarray
     Return: np.ndarray of same shape (dtype=float)
     """
-    a = np.asarray(x, dtype = float)
-    vectorized_erf = np.vectorize(math.erf)
-    a = 0.5 * a * (1 + vectorized_erf(a / math.sqrt(2)))
-    return a
+    x = np.asarray(x, dtype = float)
+    x = 0.5 * x * (1 + np.vectorize(math.erf)(x / math.sqrt(2)))
+    return x
