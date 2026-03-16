@@ -10,5 +10,5 @@ def majority_classifier(y_train, X_test):
     majority_label = labels[np.argmax(counts)]
     if X_test.shape[0] == 0:
        return np.asarray([], dtype = int)
-    predictions = np.full(shape = (X_test.shape[0],), fill_value = majority_label, dtype = int)
+    predictions = np.full(shape = (X_test.shape[0], ), fill_value = majority_label, dtype = int)
     return predictions
