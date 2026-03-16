@@ -17,14 +17,15 @@ def decision_tree_split(X, y):
     """
     Find the best feature and threshold to split the data.
     """
+    X = np.asarray(X)
     y = np.asarray(y)
     
     best_gain = 0
     best_feature = 0
     best_threshold = 0
     
-    for feature in range(0, len(X[0])):
-        temp = sorted(set([X[sample][feature] for sample in range(len(X))]))
+    for feature in range(0, X.shape[1]):
+        temp = sorted(set([X[sample][feature] for sample in range(0, X.shape[0])]))
         
         for i in range(0, len(temp) - 1):
             threshold = (temp[i] + temp[i + 1]) / 2
