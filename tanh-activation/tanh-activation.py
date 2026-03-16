@@ -1,6 +1,6 @@
 import numpy as np
 
 def tanh(x):
-    a = np.asarray(x, dtype = float)
-    a = (np.exp(a) - np.exp(-a)) / (np.exp(a) + np.exp(-a))
-    return a
+    x = np.asarray(x, dtype = float)
+    x = (np.exp(x) - np.exp(-x)) / (np.exp(x) + np.exp(-x))
+    return x
