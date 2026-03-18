@@ -1,6 +1,7 @@
 import numpy as np
 
 def gini(y):
+    if len(y) == 0: return float(0)
     labels, counts = np.unique(y, return_counts = True)
     counts = counts[counts > 0]
     p = counts / len(y)
@@ -8,9 +9,9 @@ def gini(y):
     return 1 - p.sum()
 
 def information_gain(y, split_mask):
+    if len(y) == 0: return float(0)
     left_y = y[split_mask]
     right_y = y[~split_mask]
-    if len(left_y) == 0 or len(right_y) == 0: return 0
     return gini(y) - (len(left_y) / len(y) * gini(left_y) + len(right_y) / len(y) * gini(right_y))
 
 def decision_tree_split(X, y):
@@ -38,4 +39,3 @@ def decision_tree_split(X, y):
                 best_threshold = threshold
                 
     return [best_feature, best_threshold]
-    
