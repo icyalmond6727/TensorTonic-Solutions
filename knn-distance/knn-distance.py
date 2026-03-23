@@ -12,9 +12,6 @@ def knn_distance(X_train, X_test, k):
     if len(X_test) == 0: return np.empty(shape = (0, k), dtype = int)
     ans = []
     for i in range(0, len(X_test)):
-        if len(X_train) == 0:
-            ans.append([-1] * k)
-            continue
         distances = np.linalg.norm(X_train - X_test[i], axis = 1)
         distances = np.argsort(distances).tolist()
         if len(distances) < k: distances.extend([-1] * (k - len(distances)))
